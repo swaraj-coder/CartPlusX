@@ -28,8 +28,8 @@ export const register= async(req,res) =>{
     }
     res.cookie("token", token, {
       httpOnly: true,
-      secure: false,
-      sameSite: "Lax",
+      secure: true,
+      sameSite: "none",
       maxAge: 7 * 24 * 60 * 60 * 1000 // 7 days
     });
       return res.status(201).json(user);
@@ -59,8 +59,8 @@ export const login = async(req,res) =>{
      console.log("generated token",token)
      res.cookie("token", token, {
       httpOnly: true,
-      secure: false,
-      sameSite: "Lax",
+      secure: true,
+      sameSite: "none",
       maxAge: 7 * 24 * 60 * 60 * 1000 // 7 days
     });
       return res.status(201).json(user);
@@ -98,8 +98,8 @@ export const googleLogin =async (req,res)=>{
      console.log("generated token",token)
      res.cookie("token", token, {
       httpOnly: true,
-      secure: false,
-      sameSite: "Lax",
+      secure: true,
+      sameSite: "none",
       maxAge: 7 * 24 * 60 * 60 * 1000 // 7 days
     });
       return res.status(200).json(user);
@@ -118,8 +118,8 @@ export const adminLogin = async (req,res) => {
      console.log("generated token",token)
      res.cookie("token", token, {
       httpOnly: true,
-      secure: false,
-      sameSite: "Lax",
+      secure: true,
+      sameSite: "none",
       maxAge: 1 * 24 * 60 * 60 * 1000 // 7 days
     });
       return res.status(200).json(token);
