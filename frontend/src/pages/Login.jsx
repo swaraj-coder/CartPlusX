@@ -5,7 +5,7 @@
  import { IoEyeOutline } from "react-icons/io5";
  import { IoMdEye } from "react-icons/io";
  import {useState} from 'react';
-import { authDataContext } from '../context/authContext';
+import { authDataContext } from '../context/AuthContext';
 import axios from 'axios';
 import { signInWithPopup } from 'firebase/auth';
 import { auth, provider } from '../../utils/Firebase';
