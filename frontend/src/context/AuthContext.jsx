@@ -3,7 +3,7 @@
  export const authDataContext= createContext()
  
  function AuthContext({children}) {
-    let serverUrl= "http://localhost:3000"
+    let serverUrl= "https://cartplusx-backend.onrender.com"
 
 
     let value ={
