@@ -1,26 +1,21 @@
- import React, { createContext } from 'react'
- 
- export const authDataContext= createContext()
- 
- function AuthContext({children}) {
-    let serverUrl= "https://cartplusx-backend.onrender.com"
+import React, { createContext } from 'react'
 
+export const authDataContext = createContext()
 
-    let value ={
-        serverUrl
+function AuthContext({ children }) {
+  // Switch automatically based on environment
+  let serverUrl =
+    import.meta.env.MODE === "development"
+      ? "http://localhost:3000" // Local backend
+      : "https://cartplusx-backend.onrender.com" // Deployed backend
 
-    }
-   return (
+  let value = { serverUrl }
 
-   
-    
-     <div>
-       <authDataContext.Provider value={value}>
-       {children}
-        </authDataContext.Provider>   
-     </div>
-   )
- }
- 
- export default AuthContext
- 
+  return (
+    <authDataContext.Provider value={value}>
+      {children}
+    </authDataContext.Provider>
+  )
+}
+
+export default AuthContext
